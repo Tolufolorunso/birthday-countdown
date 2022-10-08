@@ -203,6 +203,7 @@ body {
 
   .section-right {
     margin-top: 40px;
+    padding-inline: 1rem;
   }
 
   .countdown-wrapper {
