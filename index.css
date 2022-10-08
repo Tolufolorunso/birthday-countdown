@@ -102,7 +102,7 @@ body {
   --max-width: 1400px;
   --padding: 1rem;
 
-  width: min(var(--max-width), 100% - var(--padding) * 2);
+  /* width: min(var(--max-width), 100% - var(--padding) * 2); */
   margin-inline: auto;
 }
 
@@ -114,11 +114,12 @@ body {
 }
 
 .section-left {
-  background-image: url(./countdown-4-1000x1000.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(./comissioner-removebg.png);
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
-  filter: grayscale(60%);
+  filter: grayscale(100%);
   width: 50%;
   height: 100vh;
 }
@@ -128,6 +129,8 @@ body {
   justify-content: center;
   align-items: center;
   align-content: center;
+  /* position: absolute; */
+  width: 50%;
 
   flex-wrap: wrap;
   gap: 10px;
@@ -145,7 +148,9 @@ body {
   width: 100px;
   height: 100px;
   background-color: #fff;
-  color: tomato;
+  /* filter: grayscale(0); */
+  color: tomato !important;
+
   font-size: 1.3rem;
   font-weight: 700;
 }
@@ -169,7 +174,7 @@ body {
 
 .main-msg h1 {
   margin-bottom: 15px;
-  font-size: clamp(2rem, 3vw, 3.5em);
+  font-size: clamp(1.8rem, 3vw, 3em);
   line-height: 1;
   text-align: justify;
 }
@@ -179,7 +184,7 @@ body {
   color: tomato;
   display: inline-block;
   font-size: 3rem;
-  font-size: clamp(2rem, 3vw, 3em);
+  font-size: clamp(1.7rem, 3vw, 3em);
 }
 
 .main-area p {
@@ -190,7 +195,7 @@ body {
 
 @media (max-width: 35em) {
   .main {
-    padding-bottom: 60px;
+    /* padding-bottom: 60px; */
   }
   .main-area {
     flex-direction: column;
@@ -202,12 +207,15 @@ body {
   }
 
   .section-right {
-    margin-top: 40px;
+    margin-bottom: -100px;
     padding-inline: 1rem;
+    position: absolute;
   }
 
   .countdown-wrapper {
-    align-content: center;
+    align-content: flex-start;
+
+    margin-top: 30px;
   }
 
   .countdown {
@@ -215,8 +223,13 @@ body {
     height: 70px;
   }
 
+  .main-msg {
+    gap: 0;
+  }
+
   .main-msg h1 {
     font-size: 2.5em;
+    line-height: 0.8;
   }
 
   .main-area p {
@@ -224,12 +237,6 @@ body {
     font-size: 1.05em;
     font-weight: 400;
   }
-}
-
-.logo {
-  position: absolute;
-  top: 40px;
-  height: 30px;
 }
 
 .birth {
