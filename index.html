@@ -57,6 +57,7 @@
       </div>
     </main>
     <div class="birth">
+      <img src="./comissioner-removebg.png" alt="" />
       <div class="birth-content">
         <h2>Congratulation! Happy Birthday</h2>
         <p>
@@ -68,7 +69,9 @@
       </div>
     </div>
     <script>
-      const countDownDate = new Date('Oct 13, 2022').getTime();
+      let year = new Date().getFullYear();
+
+      const countDownDate = new Date(`Oct 13, ${year}`).getTime();
 
       // Update the count down every 1 second
       const x = setInterval(function () {
@@ -96,10 +99,12 @@
         document.querySelector('.day').textContent = days;
 
         // If the count down is finished, write some text
+
         if (distance < 0) {
           clearInterval(x);
           document.querySelector('.main').style.display = 'none';
           document.querySelector('.birth').style.display = 'flex';
+          year += 1;
         }
       }, 1000);
     </script>
