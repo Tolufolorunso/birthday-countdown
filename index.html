@@ -59,7 +59,7 @@
     <div class="birth">
       <img src="./comissioner-removebg.png" alt="" />
       <div class="birth-content">
-        <h2>Congratulation! Happy Birthday</h2>
+        <h2>Happy Birthday</h2>
         <p>
           You are a remarkable person who’s earned my adoration and deep respect
           with how you’ve lived your life. May your birthday celebrations be
@@ -70,11 +70,9 @@
     </div>
     <script>
       let year = new Date().getFullYear();
-
       const countDownDate = new Date(`Oct 13, ${year}`).getTime();
 
-      // Update the count down every 1 second
-      const x = setInterval(function () {
+      function timer() {
         // Get today's date and time
         const now = new Date().getTime();
 
@@ -97,9 +95,12 @@
         document.querySelector('.hour').textContent =
           hours >= 10 ? hours : '0' + hours;
         document.querySelector('.day').textContent = days;
+      }
 
+      // Update the count down every 1 second
+      const x = setInterval(function () {
         // If the count down is finished, write some text
-
+        timer();
         if (distance < 0) {
           clearInterval(x);
           document.querySelector('.main').style.display = 'none';

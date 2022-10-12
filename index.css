@@ -221,17 +221,19 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  position: absolute;
+  bottom: 0;
 }
 
 .birth-content h2 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1;
 }
 
 .birth-content p {
   margin-top: 20px;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -288,6 +290,6 @@ body {
   }
 
   .birth-content h2 {
-    font-size: 2.1rem;
+    font-size: 1.7rem;
   }
 }
