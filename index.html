@@ -71,13 +71,13 @@
     <script>
       let year = new Date().getFullYear();
       const countDownDate = new Date(`Oct 13, ${year}`).getTime();
-
+      let distance;
       function timer() {
         // Get today's date and time
         const now = new Date().getTime();
 
         // Find the distance between now and the count down date
-        const distance = countDownDate - now;
+        distance = countDownDate - now;
 
         // Time calculations for days, hours, minutes and seconds
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -103,11 +103,54 @@
         timer();
         if (distance < 0) {
           clearInterval(x);
+          //console.log(distance);
           document.querySelector('.main').style.display = 'none';
           document.querySelector('.birth').style.display = 'flex';
-          year += 1;
+          // year += 1;
+          setTimeout(second, 86400000);
         }
       }, 1000);
+
+      function second() {
+        const countDownDate = new Date(`Oct 13, 2023`).getTime();
+
+        const i = setInterval(function () {
+          // If the count down is finished, write some text
+          document.querySelector('.main').style.display = 'flex';
+          document.querySelector('.birth').style.display = 'none';
+          const now = new Date().getTime();
+
+          // Find the distance between now and the count down date
+          distance = countDownDate - now;
+
+          // Time calculations for days, hours, minutes and seconds
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          // Display the result in the element with id="demo"
+          document.querySelector('.sec').textContent =
+            seconds >= 10 ? seconds : '0' + seconds;
+          document.querySelector('.min').textContent =
+            minutes >= 10 ? minutes : '0' + minutes;
+          document.querySelector('.hour').textContent =
+            hours >= 10 ? hours : '0' + hours;
+          document.querySelector('.day').textContent = days;
+          if (distance < 0) {
+            clearInterval(i);
+            //console.log(distance);
+            document.querySelector('.main').style.display = 'none';
+            document.querySelector('.birth').style.display = 'flex';
+            // year += 1;
+            //setTimeout(timer, 2000);
+          }
+        }, 1000);
+      }
     </script>
   </body>
 </html>
