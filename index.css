@@ -175,7 +175,7 @@ body {
 .main-msg h1 {
   margin-bottom: 15px;
   font-size: clamp(1.8rem, 3vw, 3em);
-  line-height: 1;
+  line-height: 1.5;
   text-align: justify;
 }
 
@@ -245,11 +245,12 @@ body {
 }
 
 @media (max-width: 35em) {
-  .main {
-    /* padding-bottom: 60px; */
-  }
+  /* .main {
+    padding-bottom: 60px;
+  } */
   .main-area {
     flex-direction: column;
+    position: relative;
   }
 
   .section-left,
@@ -258,15 +259,20 @@ body {
   }
 
   .section-right {
-    margin-bottom: -100px;
+    /* margin-bottom: -100px; */
     padding-inline: 1rem;
     position: absolute;
+    bottom: 10px;
+  }
+
+  .main-msg h1 span {
+    line-height: 1.7;
   }
 
   .countdown-wrapper {
-    align-content: flex-start;
-
-    margin-top: 30px;
+    align-content: flex-end;
+    justify-content: flex-start;
+    padding: 0 0 13rem 1rem;
   }
 
   .countdown {
